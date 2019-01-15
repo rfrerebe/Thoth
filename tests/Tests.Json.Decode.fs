@@ -494,9 +494,9 @@ Expecting a datetimeoffset but instead got: "NOT A DATETIMEOFFSET"
 
             testCase "a timespan works" <| fun _ ->
                 let expected =
-                    TimeSpan(23, 45, 0)
+                    TimeSpan(1,23, 45, 0, 67)
                     |> Ok
-                let json = "\"23:45:00\""
+                let json = "\"1.23:45:00.0670000\""
                 let actual =
                     Decode.fromString Decode.timespan json
                 equal expected actual

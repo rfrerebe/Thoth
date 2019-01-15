@@ -188,7 +188,7 @@ module Encode =
     /// **Exceptions**
     ///
     let timespan (value : System.TimeSpan) : JsonValue =
-        value.ToString() |> string
+        value.ToString("c", CultureInfo.InvariantCulture) |> string
 
     let int64 (value : int64) : JsonValue =
         box (value.ToString(CultureInfo.InvariantCulture))

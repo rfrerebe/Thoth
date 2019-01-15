@@ -149,11 +149,7 @@ let tests : Test =
                 equal expected actual
 
             testCase "a timeSpan works" <| fun _ ->
-                #if FABLE_COMPILER
-                let expected = "\"1.02:03:04.005\""
-                #else
                 let expected = "\"1.02:03:04.0050000\""
-                #endif
                 let actual =
                     TimeSpan(1, 2, 3, 4, 5)
                     |> Encode.timespan

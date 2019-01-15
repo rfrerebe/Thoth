@@ -187,7 +187,7 @@ module Encode =
         JValue(value.ToString("O", CultureInfo.InvariantCulture)) :> JsonValue
 
     let timespan (value : System.TimeSpan) : JsonValue =
-        JValue(value.ToString()) :> JsonValue
+        JValue(value.ToString("c", CultureInfo.InvariantCulture)) :> JsonValue
 
     let tuple2
             (enc1 : Encoder<'T1>)
